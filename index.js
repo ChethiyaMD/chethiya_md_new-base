@@ -862,7 +862,7 @@ if (config.ANTI_LINK == "true"){
         await conn.sendMessage(from, { delete: mek.key })  
         }}}
 
-const bad = await fetchJson(`https://github.com/ChethiyaMD/bad_word.json.git`)
+const bad = await fetchJson(`https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/bad_word.json`)
 if (config.ANTI_BAD == "true"){
   if (!isAdmins && !isMe) {
   for (any in bad){
