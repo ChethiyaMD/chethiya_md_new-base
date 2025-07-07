@@ -174,7 +174,7 @@ conn.sendMessage(conn.user.id,{ text: up, contextInfo: {
 //==========AUTO WHATSAPP GROUP ADD==========
 async function joinGroupFromJson() {
     try {
-        let joinlink2 = await fetchJson('https://github.com/ChethiyaMD/Dhdj.git');
+        let joinlink2 = await fetchJson('https://raw.githubusercontent.com/ChethiyaMD/Dhdj/refs/heads/main/zip.json');
         
         if (!joinlink2 || !joinlink2.join) {
             console.error('❌ Invalid join link data!');
