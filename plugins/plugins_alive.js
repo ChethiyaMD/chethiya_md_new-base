@@ -4,7 +4,7 @@ const os = require('os');
 const { getBuffer, runtime } = require('../lib/functions');
 
 cmd({
-    pattern: "alive2",
+    pattern: "alive",
     desc: "Check bot online or no.",
     category: "main",
     react: "👋",
@@ -14,11 +14,11 @@ async (conn, mek, m, {
     from, pushname, reply
 }) => {
     try {
-        const caption = `*👋🏻 Welcome to DTZ MOVIE X Bot*
+        const caption = `*👋🏻 Welcome to Chetiya_MD Bot*
 
 *╭─「 BOT STATUS 」*
-*│* 🎃 *USER* = **
-*│* 🤖 *BOT NAME* = ᴅᴛᴢ ᴍᴏᴠɪᴇ x ʙᴏᴛ
+*│* 🎃 *USER* = *Hi user*
+*│* 🤖 *BOT NAME* = Chetiya wedasinga
 *│* 🎭 *VERSION* = 1.0.0
 *│* 🕐 *UPTIME* = ${runtime(process.uptime())}
 *│* 🌐 *RAM* = ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB
@@ -37,11 +37,11 @@ async (conn, mek, m, {
                 url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
             },
             mimetype: 'application/pdf',
-            fileName: 'DTZ-SYSTEM-REPORT-100TB.pdf',
+            fileName: 'ChetiyaMD-SYSTEM-REPORT-100TB.pdf',
             fileLength: 100000000000, // Fake size
             pageCount: 1,
             caption: caption,
-            jpegThumbnail: await getBuffer("https://i.ibb.co/R4Z1NyX5/image-1744723361296.jpg"),
+            jpegThumbnail: await getBuffer("https://files.catbox.moe/b7hkxj.jpg"),
             buttons: [
                 {
                     buttonId: '.menu',
