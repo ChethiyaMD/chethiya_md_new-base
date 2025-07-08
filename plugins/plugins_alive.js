@@ -1,4 +1,4 @@
-const config = require("../config");
+const config = require("../settings");
 const { cmd } = require('../lib/command');
 const os = require('os');
 const { getBuffer, runtime } = require('../lib/functions');
