@@ -28,22 +28,22 @@ cmd({
         let imageUrl = "https://files.catbox.moe/b7hkxj.jpg";
 
         let vpsOptions = [
-            { title: "ᴏᴡɴᴇʀ menu ", description: "Bot Owner Only Commands", id: `${prefix}ownermenu` },
-            { title: "ᴅᴏᴡɴʟᴏᴀᴅ menu ", description: "Get Bot Download Menu", id: `${prefix}dlmenu` },
-            { title: "LOGO MENU ", description: "Get Bot logo Menu", id: `${prefix}logomenu` },
-            { title: "ᴄᴏɴᴠᴇʀᴛ menu ", description: "Get Bot Convert Menu", id: `${prefix}convertmenu` },
-            { title: "ɢʀᴏᴜᴘ ᴍᴇɴᴜ ", description: "Get Group Only Commands", id: `${prefix}groupmenu` },
-            { title: "ᴀɪ ᴍᴇɴᴜ ", description: "Get Bot AI Commands List", id: `${prefix}aimenu` },
-            { title: "𝙰𝙽𝙸𝙼𝙴 menu ", description: "Get Bot Search Menu", id: `${prefix}animemenu` },
-            { title: "ꜰᴜɴ menu ", description: "Fun Joke Menu Bot", id: `${prefix}funmenu` },
-            { title: "𝙼𝙰𝙸𝙽 menu ", description: "Owner Only Bug Menu", id: `${prefix}mainmenu` },
-            { title: "𝙾𝚃𝙷𝙴𝚁 ᴍᴇɴᴜ️ ", description: "Random Commands Menu", id: `${prefix}othermenu` }
+            { title: "ᴏᴡɴᴇʀ menu", description: "Bot Owner Only Commands", id: `${prefix}ownermenu` },
+            { title: "ᴅᴏᴡɴʟᴏᴀᴅ menu", description: "Get Bot Download Menu", id: `${prefix}dlmenu` },
+            { title: "LOGO MENU", description: "Get Bot logo Menu", id: `${prefix}logomenu` },
+            { title: "ᴄᴏɴᴠᴇʀᴛ menu", description: "Get Bot Convert Menu", id: `${prefix}convertmenu` },
+            { title: "ɢʀᴏᴜᴘ ᴍᴇɴᴜ", description: "Get Group Only Commands", id: `${prefix}groupmenu` },
+            { title: "ᴀɪ ᴍᴇɴᴜ", description: "Get Bot AI Commands List", id: `${prefix}aimenu` },
+            { title: "𝙰𝙽𝙸𝙼𝙴 menu", description: "Get Bot Search Menu", id: `${prefix}animemenu` },
+            { title: "ꜰᴜɴ menu", description: "Fun Joke Menu Bot", id: `${prefix}funmenu` },
+            { title: "𝙼𝙰𝙸𝙽 menu", description: "Owner Only Bug Menu", id: `${prefix}mainmenu` },
+            { title: "𝙾𝚃𝙷𝙴𝚁 ᴍᴇɴᴜ️", description: "Random Commands Menu", id: `${prefix}othermenu` }
         ];
 
         let buttonSections = [
             {
                 title: "List of Chethiya_MD Bot Commands",
-                highlight_label: "𝕮𝖍𝖊𝖙𝖍𝖎𝖞𝖆_𝕸𝕯",
+                highlight_label: "Chetiya_MD",
                 rows: vpsOptions
             }
         ];
