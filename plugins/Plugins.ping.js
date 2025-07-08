@@ -18,21 +18,52 @@ const fs = require('fs');
 const config = require("../settings");
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, getBinaryNodeChildren, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType, downloadContentFromMessage} = require('@whiskeysockets/baileys');
 cmd({
+
     pattern: "ping",
-    desc: "Check bot's response time.",
+    react:"📌",
+
+    alias: ["speed","nurospeed"],
+
+    desc: "To Check bot's ping",
+
     category: "main",
-    react: "🎋",
+
+    use: '.ping',
+
     filename: __filename
+
 },
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        const startTime = Date.now()
-        const message = await conn.sendMessage(from, { text: '> *PINGING 𝕮𝖍𝖊𝖙𝖍𝖎𝖞𝖆_𝕸𝕯...*' })
-        const endTime = Date.now()
-        const ping = endTime - startTime
-        await conn.sendMessage(from, { text: `> *𝕮𝖍𝖊𝖙𝖍𝖎𝖞𝖆_𝕸𝕯  𝐒ᴘᴇᴇᴅ : ${ping}ms 🍷*` }, { quoted: message })
-    } catch (e) {
-        console.log(e)
-        reply(`${e}`)
-    }
+
+async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+
+try{
+
+const nima = require("@whiskeysockets/baileys")
+
+var inital = new Date().getTime();
+
+let ping = await conn.sendMessage(from , { text: '*_Pinging..._* 🔥'  } )
+
+var final = new Date().getTime();
+
+await conn.sendMessage(from, { text : '*●●◎◎◎◎◎◎◎◎ 10%*' , edit : ping.key })
+
+await conn.sendMessage(from, { text : '*●●●●◎◎◎◎◎ 30%*' , edit : ping.key })
+
+await conn.sendMessage(from, { text : '*●●●●●●◎◎◎◎ 50%*' , edit : ping.key })
+
+await conn.sendMessage(from, { text : '*●●●●●●●●◎◎ 80%*' , edit : ping.key })
+
+await conn.sendMessage(from, { text : '*●●●●●●●●●● 100%*' , edit : ping.key })
+
+return await conn.sendMessage(from, { text : '*⚠️𝕮𝖍𝖊𝖙𝖍𝖎𝖞𝖆_𝕸𝕯 ◉ ꜱᴘᴇᴇᴅ ' + (final - inital) + ' Ms* ' , edit : ping.key })
+
+} catch (e) {
+
+reply('*𝔈ℜℜ𝔒ℜ🫩 !!*')
+
+l(e)
+
+}
+
 })
