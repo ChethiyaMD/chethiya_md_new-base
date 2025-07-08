@@ -6,7 +6,7 @@ const config = require("../settings");
 
 
 const menuCommand = {
-  pattern: "menu",
+  pattern: "menu2",
   react: "📜",
   category: "main",
   use: ".menu",
