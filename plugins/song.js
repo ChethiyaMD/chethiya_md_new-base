@@ -122,7 +122,7 @@ cmd(song2Command, async (client, m, message, {
       const msgObj = {
         image: { url: video.image }, // Using video thumbnail
         caption: descriptionText,
-        footer: '> *🄿🄾🅆🄴🅁🄳" 🅱🆈  😈 *𝕮𝖍𝖊𝖙𝖍𝖎𝖞𝖆_𝕸𝕯*",
+        footer: `> *🄿🄾🅆🄴🅁🄳" 🅱🆈  😈 *𝕮𝖍𝖊𝖙𝖍𝖎𝖞𝖆_𝕸𝕯*`,
         buttons: buttons,
         buttonText: "*➣ ❮❮ Click You Need Button...🔢 ❯❯*",
         headerType: 4, // Suitable for image-based messages
