@@ -17,10 +17,10 @@ const {
 } = require("../lib/scrap");
 
 const song2Command = {
-  pattern: "song",
+  pattern: "song2",
   desc: "To download songs.",
   react: "🎵",
-  use: ".song < Text or Link >",
+  use: ".song2 < Text or Link >",
   category: "download",
   filename: __filename
 };
@@ -62,7 +62,7 @@ cmd(song2Command, async (client, m, message, {
     const videoUrl = video.url;
 
     const descriptionText = `
-*〘 \`❗ chetiyaMD ❗\` 〙*
+*〘 \`❗ 𝐃ᴇᴠɪʟ 𝐓ᴇᴄʜ 𝐌ᴅ 𝐁ᴏᴛ ❗\` 〙*
 
 *╭┈─「🎧 𝐒ᴏɴɢ 𝐃ᴏᴡɴʟᴏᴀᴅᴇ 🎧」──┈⊷*
 *┃============ ◦│࿕│◦ ============*
@@ -97,7 +97,7 @@ cmd(song2Command, async (client, m, message, {
 
       const song2Sections = [buttonMenu];
       const interactiveSong2 = {
-        title: "𝐒ᴇʟᴇᴛᴇ 𝐀ᴜᴅɪᴏ 𝐋ɪꜱᴛ⎙",
+        title: "𝐒ᴇʟᴇᴛᴇ 𝐀ᴜᴅɪᴏ 𝐋ɪꜱᴛ⎙⎙",
         sections: song2Sections
       };
 
@@ -122,7 +122,7 @@ cmd(song2Command, async (client, m, message, {
       const msgObj = {
         image: { url: video.image }, // Using video thumbnail
         caption: descriptionText,
-        footer: "https://files.catbox.moe/b7hkxj.jpg",
+        footer: '> *🄿🄾🅆🄴🅁🄳" 🅱🆈  😈 *𝕮𝖍𝖊𝖙𝖍𝖎𝖞𝖆_𝕸𝕯*",
         buttons: buttons,
         buttonText: "*➣ ❮❮ Click You Need Button...🔢 ❯❯*",
         headerType: 4, // Suitable for image-based messages
@@ -184,5 +184,736 @@ cmd(song2Command, async (client, m, message, {
   } catch (error) {
     reply("*ERROR !!*");
     l(error);
+  }
+});
+const Commandytmp3 = {
+  pattern: "ytmp3",
+  react: "⬇",
+  dontAddCommandList: false,
+  filename: __filename
+};
+
+cmd(Commandytmp3, async (bot, message, user, {
+  from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply
+}) => {
+  try {
+    const replyMsg = (await fetchJson("https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/Mreply.json")).replyMsg;
+    
+    if (!q) {
+      return reply(replyMsg.url);
+    }
+
+    if (!q.includes("https://youtube.com/watch?v=")) {
+      return await reply(replyMsg.not_fo);
+    }
+
+    let downloadUrl = await getDownloadUrl(q, "mp3");
+    const reactUp = {
+      text: "⬆",
+      key: message.key
+    };
+    const react = { react: reactUp };
+    await bot.sendMessage(from, react);
+
+    const audio = { url: downloadUrl };
+    const audioMessage = {
+      audio: audio,
+      mimetype: "audio/mpeg"
+    };
+    const quotedMessage = { quoted: message };
+
+    await bot.sendMessage(from, audioMessage, quotedMessage);
+
+    const reactSuccess = {
+      text: "✔",
+      key: message.key
+    };
+    const successReact = { react: reactSuccess };
+    await bot.sendMessage(from, successReact);
+  } catch (error) {
+    console.log(error);
+
+    try {
+      const replyMsg = (await fetchJson("https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/Mreply.json")).replyMsg;
+
+      if (!q) {
+        return reply(replyMsg.url);
+      }
+
+      if (!q.includes("https://youtube.com/watch?v=")) {
+        return await reply(replyMsg.not_fo);
+      }
+
+      let downloadInfo = await giftm(q);
+      const reactUp = {
+        text: "⬆",
+        key: message.key
+      };
+      const react = { react: reactUp };
+      await bot.sendMessage(from, react);
+
+      const audio = { url: downloadInfo.dl_link };
+      const audioMessage = {
+        audio: audio,
+        mimetype: "audio/mpeg"
+      };
+      const quotedMessage = { quoted: message };
+
+      await bot.sendMessage(from, audioMessage, quotedMessage);
+
+      const reactSuccess = {
+        text: "✔",
+        key: message.key
+      };
+      const successReact = { react: reactSuccess };
+      await bot.sendMessage(from, successReact);
+    } catch (error2) {
+      try {
+        if (!q) {
+          return reply(msr.url);
+        }
+
+        if (!q.includes("https://youtube.com/watch?v=")) {
+          return await reply(msr.not_fo);
+        }
+
+        let downloadInfo = await ytmp3(q);
+        const reactUp = {
+          text: "⬆",
+          key: message.key
+        };
+        const react = { react: reactUp };
+        await bot.sendMessage(from, react);
+
+        const audio = { url: downloadInfo.dl_link };
+        const audioMessage = {
+          audio: audio,
+          mimetype: "audio/mpeg"
+        };
+        const quotedMessage = { quoted: message };
+
+        await bot.sendMessage(from, audioMessage, quotedMessage);
+
+        const reactSuccess = {
+          text: "✔",
+          key: message.key
+        };
+        const successReact = { react: reactSuccess };
+        await bot.sendMessage(from, successReact);
+      } catch (error3) {
+        console.log(error3);
+      }
+    }
+  }
+});
+const Commandytmp3v = {
+  pattern: "ytmp3v",
+  react: "⬇",
+  dontAddCommandList: false,
+  filename: __filename
+};
+
+cmd(Commandytmp3v, async (bot, message, user, {
+  from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply
+}) => {
+  try {
+    const replyMsg = (await fetchJson("https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/Mreply.json")).replyMsg;
+    
+    if (!q) {
+      return reply(replyMsg.url);
+    }
+
+    if (!q.includes("https://youtube.com/watch?v=")) {
+      return await reply(replyMsg.not_fo);
+    }
+
+    let downloadUrl = await getDownloadUrl(q, "mp3");
+    const reactUp = {
+      text: "⬆",
+      key: message.key
+    };
+    const react = { react: reactUp };
+    await bot.sendMessage(from, react);
+
+    const video = { url: downloadUrl };
+    const videoMessage = {
+      video: video,
+      mimetype: "video/mp4"
+    };
+    const quotedMessage = { quoted: message };
+
+    await bot.sendMessage(from, videoMessage, quotedMessage);
+
+    const reactSuccess = {
+      text: "✔",
+      key: message.key
+    };
+    const successReact = { react: reactSuccess };
+    await bot.sendMessage(from, successReact);
+  } catch (error) {
+    console.log(error);
+
+    try {
+      const replyMsg = (await fetchJson("https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/Mreply.json")).replyMsg;
+
+      if (!q) {
+        return reply(replyMsg.url);
+      }
+
+      if (!q.includes("https://youtube.com/watch?v=")) {
+        return await reply(replyMsg.not_fo);
+      }
+
+      let downloadInfo = await giftm(q);
+      const reactUp = {
+        text: "⬆",
+        key: message.key
+      };
+      const react = { react: reactUp };
+      await bot.sendMessage(from, react);
+
+      const video = { url: downloadInfo.dl_link };
+      const videoMessage = {
+        video: video,
+        mimetype: "video/mp4"
+      };
+      const quotedMessage = { quoted: message };
+
+      await bot.sendMessage(from, videoMessage, quotedMessage);
+
+      const reactSuccess = {
+        text: "✔",
+        key: message.key
+      };
+      const successReact = { react: reactSuccess };
+      await bot.sendMessage(from, successReact);
+    } catch (error2) {
+      try {
+        if (!q) {
+          return reply(msr.url);
+        }
+
+        if (!q.includes("https://youtube.com/watch?v=")) {
+          return await reply(msr.not_fo);
+        }
+
+        let downloadInfo = await ytmp3(q);
+        const reactUp = {
+          text: "⬆",
+          key: message.key
+        };
+        const react = { react: reactUp };
+        await bot.sendMessage(from, react);
+
+        const video = { url: downloadInfo.dl_link };
+        const videoMessage = {
+          video: video,
+          mimetype: "video/mp4"
+        };
+        const quotedMessage = { quoted: message };
+
+        await bot.sendMessage(from, videoMessage, quotedMessage);
+
+        const reactSuccess = {
+          text: "✔",
+          key: message.key
+        };
+        const successReact = { react: reactSuccess };
+        await bot.sendMessage(from, successReact);
+      } catch (error3) {
+        console.log(error3);
+      }
+    }
+  }
+});
+const Commandytdocs = {
+  pattern: "ytdocs",
+  react: "⬇",
+  dontAddCommandList: false,
+  filename: __filename
+};
+
+cmd(Commandytdocs, async (bot, message, user, {
+  from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply
+}) => {
+  try {
+    const replyMsg = (await fetchJson("https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/Mreply.json")).replyMsg;
+    
+    if (!q) {
+      return reply(replyMsg.url);
+    }
+
+    if (!q.includes("https://youtube.com/watch?v=")) {
+      return await reply(replyMsg.not_fo);
+    }
+
+    let downloadUrl = await getDownloadUrl(q, "mp3");
+    const reactUp = {
+      text: "⬆",
+      key: message.key
+    };
+    const react = { react: reactUp };
+    await bot.sendMessage(from, react);
+
+    const document = { url: downloadUrl };
+    const documentMessage = {
+      document: document,
+      mimetype: "audio/mpeg"
+    };
+    const quotedMessage = { quoted: message };
+
+    await bot.sendMessage(from, documentMessage, quotedMessage);
+
+    const reactSuccess = {
+      text: "✔",
+      key: message.key
+    };
+    const successReact = { react: reactSuccess };
+    await bot.sendMessage(from, successReact);
+  } catch (error) {
+    console.log(error);
+
+    try {
+      const replyMsg = (await fetchJson("https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/Mreply.json")).replyMsg;
+
+      if (!q) {
+        return reply(replyMsg.url);
+      }
+
+      if (!q.includes("https://youtube.com/watch?v=")) {
+        return await reply(replyMsg.not_fo);
+      }
+
+      let downloadInfo = await giftm(q);
+      const reactUp = {
+        text: "⬆",
+        key: message.key
+      };
+      const react = { react: reactUp };
+      await bot.sendMessage(from, react);
+
+      const document = { url: downloadInfo.dl_link };
+      const documentMessage = {
+        document: document,
+        mimetype: "audio/mpeg"
+      };
+      const quotedMessage = { quoted: message };
+
+      await bot.sendMessage(from, documentMessage, quotedMessage);
+
+      const reactSuccess = {
+        text: "✔",
+        key: message.key
+      };
+      const successReact = { react: reactSuccess };
+      await bot.sendMessage(from, successReact);
+    } catch (error2) {
+      try {
+        if (!q) {
+          return reply(msr.url);
+        }
+
+        if (!q.includes("https://youtube.com/watch?v=")) {
+          return await reply(msr.not_fo);
+        }
+
+        let downloadInfo = await ytmp3(q);
+        const reactUp = {
+          text: "⬆",
+          key: message.key
+        };
+        const react = { react: reactUp };
+        await bot.sendMessage(from, react);
+
+        const document = { url: downloadInfo.dl_link };
+        const documentMessage = {
+          document: document,
+          mimetype: "audio/mpeg"
+        };
+        const quotedMessage = { quoted: message };
+
+        await bot.sendMessage(from, documentMessage, quotedMessage);
+
+        const reactSuccess = {
+          text: "✔",
+          key: message.key
+        };
+        const successReact = { react: reactSuccess };
+        await bot.sendMessage(from, successReact);
+      } catch (error3) {
+        console.log(error3);
+      }
+    }
+  }
+});
+
+const Commandytdocsv = {
+  pattern: "ytdocsv",
+  react: "⬇",
+  dontAddCommandList: false,
+  filename: __filename
+};
+
+cmd(Commandytdocsv, async (bot, message, user, {
+  from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply
+}) => {
+  try {
+    const replyMsg = (await fetchJson("https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/Mreply.json")).replyMsg;
+    
+    if (!q) {
+      return reply(replyMsg.url);
+    }
+
+    if (!q.includes("https://youtube.com/watch?v=")) {
+      return await reply(replyMsg.not_fo);
+    }
+
+    let downloadUrl = await getDownloadUrl(q, "mp3");
+    const reactUp = {
+      text: "⬆",
+      key: message.key
+    };
+    const react = { react: reactUp };
+    await bot.sendMessage(from, react);
+
+    const document = { url: downloadUrl };
+    const documentMessage = {
+      document: document,
+      mimetype: "video/mp4"
+    };
+    const quotedMessage = { quoted: message };
+
+    await bot.sendMessage(from, documentMessage, quotedMessage);
+
+    const reactSuccess = {
+      text: "✔",
+      key: message.key
+    };
+    const successReact = { react: reactSuccess };
+    await bot.sendMessage(from, successReact);
+  } catch (error) {
+    console.log(error);
+
+    try {
+      const replyMsg = (await fetchJson("https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/Mreply.json")).replyMsg;
+
+      if (!q) {
+        return reply(replyMsg.url);
+      }
+
+      if (!q.includes("https://youtube.com/watch?v=")) {
+        return await reply(replyMsg.not_fo);
+      }
+
+      let downloadInfo = await giftm(q);
+      const reactUp = {
+        text: "⬆",
+        key: message.key
+      };
+      const react = { react: reactUp };
+      await bot.sendMessage(from, react);
+
+      const document = { url: downloadInfo.dl_link };
+      const documentMessage = {
+        document: document,
+        mimetype: "video/mp4"
+      };
+      const quotedMessage = { quoted: message };
+
+      await bot.sendMessage(from, documentMessage, quotedMessage);
+
+      const reactSuccess = {
+        text: "✔",
+        key: message.key
+      };
+      const successReact = { react: reactSuccess };
+      await bot.sendMessage(from, successReact);
+    } catch (error2) {
+      try {
+        if (!q) {
+          return reply(msr.url);
+        }
+
+        if (!q.includes("https://youtube.com/watch?v=")) {
+          return await reply(msr.not_fo);
+        }
+
+        let downloadInfo = await ytmp3(q);
+        const reactUp = {
+          text: "⬆",
+          key: message.key
+        };
+        const react = { react: reactUp };
+        await bot.sendMessage(from, react);
+
+        const document = { url: downloadInfo.dl_link };
+        const documentMessage = {
+          document: document,
+          mimetype: "video/mp4"
+        };
+        const quotedMessage = { quoted: message };
+
+        await bot.sendMessage(from, documentMessage, quotedMessage);
+
+        const reactSuccess = {
+          text: "✔",
+          key: message.key
+        };
+        const successReact = { react: reactSuccess };
+        await bot.sendMessage(from, successReact);
+      } catch (error3) {
+        console.log(error3);
+      }
+    }
+  }
+});
+
+const Commandytaa = {
+  pattern: "ytaa",
+  react: "⬇️",
+  dontAddCommandList: false,
+  filename: __filename
+};
+
+cmd(Commandytaa, async (bot, message, user, {
+  from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply
+}) => {
+  try {
+    const replyMsg = (await fetchJson("https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/Mreply.json")).replyMsg;
+    
+    if (!q) {
+      return reply(replyMsg.url);
+    }
+
+    if (!q.includes("https://youtube.com/watch?v=")) {
+      return await reply(replyMsg.not_fo);
+    }
+
+    let downloadUrl = await getDownloadUrl(q, "mp3");
+    const reactUp = {
+      text: "⬆️",
+      key: message.key
+    };
+    const react = { react: reactUp };
+    await bot.sendMessage(from, react);
+
+    const audio = { url: downloadUrl };
+    const audioMessage = {
+      audio: audio,
+      mimetype: "audio/mpeg",
+      ptt: true // PTT enabled
+    };
+    const quotedMessage = { quoted: message };
+
+    await bot.sendMessage(from, audioMessage, quotedMessage);
+
+    const reactSuccess = {
+      text: "✅",
+      key: message.key
+    };
+    const successReact = { react: reactSuccess };
+    await bot.sendMessage(from, successReact);
+  } catch (error) {
+    console.log(error);
+
+    try {
+      const replyMsg = (await fetchJson("https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/Mreply.json")).replyMsg;
+
+      if (!q) {
+        return reply(replyMsg.url);
+      }
+
+      if (!q.includes("https://youtube.com/watch?v=")) {
+        return await reply(replyMsg.not_fo);
+      }
+
+      let downloadInfo = await giftm(q);
+      const reactUp = {
+        text: "⬆️",
+        key: message.key
+      };
+      const react = { react: reactUp };
+      await bot.sendMessage(from, react);
+
+      const audio = { url: downloadInfo.dl_link };
+      const audioMessage = {
+        audio: audio,
+        mimetype: "audio/mpeg",
+        ptt: true // PTT enabled
+      };
+      const quotedMessage = { quoted: message };
+
+      await bot.sendMessage(from, audioMessage, quotedMessage);
+
+      const reactSuccess = {
+        text: "✅",
+        key: message.key
+      };
+      const successReact = { react: reactSuccess };
+      await bot.sendMessage(from, successReact);
+    } catch (error2) {
+      try {
+        if (!q) {
+          return reply(msr.url);
+        }
+
+        if (!q.includes("https://youtube.com/watch?v=")) {
+          return await reply(msr.not_fo);
+        }
+
+        let downloadInfo = await ytmp3(q);
+        const reactUp = {
+          text: "⬆️",
+          key: message.key
+        };
+        const react = { react: reactUp };
+        await bot.sendMessage(from, react);
+
+        const audio = { url: downloadInfo.dl_link };
+        const audioMessage = {
+          audio: audio,
+          mimetype: "audio/mpeg",
+          ptt: true // PTT enabled
+        };
+        const quotedMessage = { quoted: message };
+
+        await bot.sendMessage(from, audioMessage, quotedMessage);
+
+        const reactSuccess = {
+          text: "✅",
+          key: message.key
+        };
+        const successReact = { react: reactSuccess };
+        await bot.sendMessage(from, successReact);
+      } catch (error3) {
+        console.log(error3);
+        reply("❌ Failed to download audio. Please try again later.");
+      }
+    }
+  }
+});
+        
+const Commandytaav = {
+  pattern: "ytaav",
+  react: "⬇️",
+  dontAddCommandList: false,
+  filename: __filename
+};
+
+cmd(Commandytaav, async (bot, message, user, {
+  from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply
+}) => {
+  try {
+    const replyMsg = (await fetchJson("https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/Mreply.json")).replyMsg;
+    
+    if (!q) {
+      return reply(replyMsg.url);
+    }
+
+    if (!q.includes("https://youtube.com/watch?v=")) {
+      return await reply(replyMsg.not_fo);
+    }
+
+    let downloadUrl = await getDownloadUrl(q, "mp3");
+    const reactUp = {
+      text: "⬆️",
+      key: message.key
+    };
+    const react = { react: reactUp };
+    await bot.sendMessage(from, react);
+
+    const video = { url: downloadUrl };
+    const videoMessage = {
+      video: video,
+      mimetype: "video/mp4",
+      ptv: true // PTT enabled
+    };
+    const quotedMessage = { quoted: message };
+
+    await bot.sendMessage(from, videoMessage, quotedMessage);
+
+    const reactSuccess = {
+      text: "✅",
+      key: message.key
+    };
+    const successReact = { react: reactSuccess };
+    await bot.sendMessage(from, successReact);
+  } catch (error) {
+    console.log(error);
+
+    try {
+      const replyMsg = (await fetchJson("https://raw.githubusercontent.com/ChethiyaMD/bad_word.json/refs/heads/main/Mreply.json")).replyMsg;
+
+      if (!q) {
+        return reply(replyMsg.url);
+      }
+
+      if (!q.includes("https://youtube.com/watch?v=")) {
+        return await reply(replyMsg.not_fo);
+      }
+
+      let downloadInfo = await giftm(q);
+      const reactUp = {
+        text: "⬆️",
+        key: message.key
+      };
+      const react = { react: reactUp };
+      await bot.sendMessage(from, react);
+
+      const video = { url: downloadInfo.dl_link };
+      const videoMessage = {
+        video: video,
+        mimetype: "video/mp4",
+        ptv: true // PTT enabled
+      };
+      const quotedMessage = { quoted: message };
+
+      await bot.sendMessage(from, videoMessage, quotedMessage);
+
+      const reactSuccess = {
+        text: "✅",
+        key: message.key
+      };
+      const successReact = { react: reactSuccess };
+      await bot.sendMessage(from, successReact);
+    } catch (error2) {
+      try {
+        if (!q) {
+          return reply(msr.url);
+        }
+
+        if (!q.includes("https://youtube.com/watch?v=")) {
+          return await reply(msr.not_fo);
+        }
+
+        let downloadInfo = await ytmp3(q);
+        const reactUp = {
+          text: "⬆️",
+          key: message.key
+        };
+        const react = { react: reactUp };
+        await bot.sendMessage(from, react);
+
+        const video = { url: downloadInfo.dl_link };
+        const videoMessage = {
+          video: video,
+          mimetype: "video/mp4",
+          ptv: true // PTT enabled
+        };
+        const quotedMessage = { quoted: message };
+
+        await bot.sendMessage(from, videoMessage, quotedMessage);
+
+        const reactSuccess = {
+          text: "✅",
+          key: message.key
+        };
+        const successReact = { react: reactSuccess };
+        await bot.sendMessage(from, successReact);
+      } catch (error3) {
+        console.log(error3);
+        reply("❌ Failed to download audio. Please try again later.");
+      }
+    }
   }
 });
