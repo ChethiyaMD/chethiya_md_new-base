@@ -1,7 +1,6 @@
 const axios = require('axios');
 const { cmd } = require('../command');
-const { fetchJson } = require('../lib/functions');
-
+const { cmd } = require('../lib/command');
 cmd({
     pattern: "news",
     alias: ["hirunews", "newshiru", "hirulk"],
