@@ -1,22 +1,7 @@
-const os = require("os");
-const { cmd, commands } = require("../lib/command");
-var { get_set, input_set } = require("../lib/set_db");
-const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, Func, fetchJson, } = require("../lib/functions");
-var {
-  updateCMDStore,
-  isbtnID,
-  getCMDStore,
-  getCmdForCmdId,
-  connectdb,
-  input,
-  get,
-  updb,
-  updfb
-} = require("../lib/database");
-const axios = require("axios");
-const fs = require('fs');
-const config = require("../settings");
-const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, getBinaryNodeChildren, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType, downloadContentFromMessage} = require('@whiskeysockets/baileys');
+const axios = require('axios');
+const { cmd } = require('../command');
+const { fetchJson } = require('../lib/functions');
+
 cmd({
     pattern: "news",
     alias: ["hirunews", "newshiru", "hirulk"],
