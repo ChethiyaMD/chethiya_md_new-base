@@ -32,7 +32,7 @@ cmd({
         participants, groupAdmins, isBotAdmins, isAdmins, reply
     }) => {
         try {
-            const apiUrl = `https://suhas-bro-apii.vercel.app/hiru`;
+            const apiUrl = `https://lucicodes.x10.mx/api/hiruNews`;
             const response = await axios.get(apiUrl);
             const data = response.data;
 
